@@ -1,0 +1,50 @@
+import datetime
+from dateutil.parser import parse
+from icalendar import Calendar, Event, vDate
+
+def readIcs():
+    file = open('phildavies10@gmail.ics', 'rb')
+    cal = Calendar.from_ical(file.read())
+    # for k,v in cal.items():
+    #     print(k, v)
+    for event in cal.walk():
+        if event.name == "VEVENT" or event.name == "VJOURNAL":
+            # if event.name == "VJOURNAL":
+            print(event.get('summary'))
+            print(parse(event['dtstart'].to_ical()).date())
+            # print(event.get('dtend'))
+            # print(event.get('dtstamp'))
+            print(event.get('DESCRIPTION'))
+            if event.name == "                              VJOURNAL":
+                print("VJOURNAL")
+    file.close()
+
+def writeIcs():
+    cal = Calendar()
+    cal.add('prodid', '-//My calendar product//mxm.dk//')
+    cal.add('version', '2.0')
+
+    event = Event()
+    event.add('summary', 'Python meeting about calendaring')
+    event.add('dtstart', datetime.date.today())
+    # event.add('dtend', datetime(2005, 4, 4, 10, 0, 0, tzinfo=UTC))
+    # event.add('dtstamp', datetime(2005, 4, 4, 0, 10, 0, tzinfo=UTC))
+    event['uid'] = '201508041650phildavies10@gmail.com'
+    event.add('description', 'This is a description')
+    event.add('vjournal', 'This is a journal entry')
+    cal.add_component(event)
+
+    event = Event()
+    event.add('summary', 'Second event')
+    # event.add('dtstart', datetime.date.today())
+    event.add('dtstart', datetime.date(2015, 8, 3))
+    event.add('RRULE', {'freq': 'daily', 'count': 3})
+    # event.add('dtstamp', datetime(2005, 4, 4, 0, 10, 0, tzinfo=UTC))
+    event['uid'] = '201508041659phildavies10@gmail.com'
+    event.add('description', 'This is another description')
+    event.add('vjournal', 'This is another journal entry')
+    cal.add_component(event)
+
+    f = open('example.ics', 'wb')
+    f.write(cal.to_ical())
+    f.close()

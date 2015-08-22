@@ -1,0 +1,43 @@
+#MainWindow {
+background: Midlight;
+}
+
+#frameDates, #textBrowserDBTitle{
+border: 3px solid white;
+border-radius: 5px;
+background: Midlight;
+}
+
+QDialog#RemindersDlg.remindersDialog {
+ background-color: #ececec;
+ border: 1px solid #21759B;
+ font-family: Courier;
+}
+QMenu, QMenuBar{
+font-size: 14px;
+}
+
+QLineEdit {
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 4px;
+}
+
+QToolButton{
+color: white;
+background-color: QLinearGradient( y1: 0, y2: 1, stop: 1 #550055, stop: 0 #f0f0f0);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+border-radius: 7;
+padding: 3px;
+font-size: 11px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 10px;
+max-width: 90px;
+min-height: 10px;
+max-height: 20px;
+}
+#//*

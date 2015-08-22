@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//My calendar product//mxm.dk//
+BEGIN:VEVENT
+SUMMARY:Python meeting about calendaring
+DTSTART;VALUE=DATE:20150803
+UID:201508041650phildavies10@gmail.com
+DESCRIPTION:This is a description
+VJOURNAL:This is a journal entry
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Second event
+DTSTART;VALUE=DATE:20150803
+UID:201508041659phildavies10@gmail.com
+DESCRIPTION:This is another description
+RRULE:FREQ=DAILY;COUNT=3
+VJOURNAL:This is another journal entry
+END:VEVENT
+END:VCALENDAR

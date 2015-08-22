@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>858</width>
+    <height>740</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dayfacto</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="textBrowserJournalEntry">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>120</y>
+      <width>321</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Square721 BT</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string>Type and edit journal entry</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelJournalEntry">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>95</y>
+      <width>116</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>170</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>170</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Square721 BT</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>Journal entry</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>120</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="showGroupSeparator" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="calendarPopup">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCalendarWidget" name="calendarSelectDate">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>150</y>
+      <width>221</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="verticalHeaderFormat">
+     <enum>QCalendarWidget::NoVerticalHeader</enum>
+    </property>
+    <property name="dateEditEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QTableView" name="daysTableView">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>120</y>
+      <width>241</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxToolBar">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>0</y>
+      <width>591</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QToolButton" name="toolButtonEditEvent">
+     <property name="geometry">
+      <rect>
+       <x>145</x>
+       <y>10</y>
+       <width>66</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Edit  event</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonOpenFile">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>10</y>
+       <width>56</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Open file</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButtonNewEvent">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>61</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>New event</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButtonDeleteEvent">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>10</y>
+       <width>81</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete event</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButtonPurge">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>10</y>
+       <width>81</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Purge entries</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelSelectedDate">
+    <property name="geometry">
+     <rect>
+      <x>375</x>
+      <y>45</y>
+      <width>371</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>170</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>170</green>
+          <blue>127</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="Text">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="text">
+     <string>Selected date</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="margin">
+     <number>7</number>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowserDBTitle">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>45</y>
+      <width>201</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Liberation Serif</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Liberation Serif'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#00aa00;&quot;&gt;Journal title&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="acceptRichText">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frameEvents">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>520</y>
+      <width>571</width>
+      <height>166</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="midLineWidth">
+     <number>0</number>
+    </property>
+    <widget class="QListWidget" name="listViewEvents">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>231</width>
+       <height>146</height>
+      </rect>
+     </property>
+     <property name="modelColumn">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCategory">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>10</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Category</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelReminder">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>10</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Reminder</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowserReminder">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>30</y>
+       <width>81</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QTextEdit::NoWrap</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelNotes">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>65</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Notes</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowserNotes">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>85</y>
+       <width>306</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowserCategory">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>30</y>
+       <width>216</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QTextEdit::NoWrap</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frameDates">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>355</y>
+      <width>116</width>
+      <height>146</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QPushButton" name="pushButtonToday">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>51</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Today</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelWeek">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Week</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>pushButtonBackMonth</cstring>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFwdMonth">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>90</y>
+       <width>26</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&gt;&gt;&gt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBackMonth">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>90</y>
+       <width>26</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;&lt;&lt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFwdWeek">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>65</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&gt;&gt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelWeek_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>95</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Month</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>pushButtonBackMonth</cstring>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBackYear">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>115</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;&lt;&lt;&lt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDay">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>26</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Day</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>pushButtonBackDay</cstring>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBackDay">
+     <property name="geometry">
+      <rect>
+       <x>55</x>
+       <y>40</y>
+       <width>16</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFwdDay">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>40</y>
+       <width>16</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBackWeek">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>65</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;&lt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonFwdYear">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>115</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&gt;&gt;&gt;&gt;</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelYear">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Year</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>pushButtonBackYear</cstring>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSaveEntry">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>90</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save entry</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonClearEntry">
+    <property name="geometry">
+     <rect>
+      <x>745</x>
+      <y>90</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear entry</string>
+    </property>
+   </widget>
+   <zorder>frameEvents</zorder>
+   <zorder>frameDates</zorder>
+   <zorder>textBrowserJournalEntry</zorder>
+   <zorder>labelJournalEntry</zorder>
+   <zorder>dateEdit</zorder>
+   <zorder>calendarSelectDate</zorder>
+   <zorder>daysTableView</zorder>
+   <zorder>groupBoxToolBar</zorder>
+   <zorder>labelSelectedDate</zorder>
+   <zorder>textBrowserDBTitle</zorder>
+   <zorder>pushButtonSaveEntry</zorder>
+   <zorder>pushButtonClearEntry</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>858</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>textBrowserJournalEntry</tabstop>
+  <tabstop>pushButtonToday</tabstop>
+  <tabstop>pushButtonBackDay</tabstop>
+  <tabstop>pushButtonFwdDay</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>dateEdit</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>calendarSelectDate</receiver>
+   <slot>setSelectedDate(QDate)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>115</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,33 @@
+#MainWindow {
+background: Midlight;
+}
+
+#frameDates, #textBrowserDBTitle{
+border: 3px solid white;
+border-radius: 5px;
+background: Midlight;
+}
+
+QLineEdit {
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 4px;
+}
+
+QToolButton {
+color: white;
+background-color: QLinearGradient( y1: 0, y2: .7, stop: 1 #440044, stop: 0 #BBBBBB);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+border-radius: 7;
+padding: 3px;
+font-size: 10px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 50px;
+max-width: 90px;
+min-height: 20px;
+max-height: 20px;
+}

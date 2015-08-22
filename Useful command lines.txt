@@ -1,0 +1,40 @@
+cd \PyCharm workspace\DayfactoPyCharm
+
+pyuic5 dayfacto_main_stack.ui > dayfacto_main.py
+
+pyuic5 dayfacto_reminders_dlg.ui > dialogReminders.py
+
+pyuic5 dayfacto_alerts_dlg.ui > dialogAlerts.py
+
+pyuic5 dayfacto_search.ui > dayfacto_search.py
+
+pyuic5 dayfacto_event.ui > dayfacto_event.py
+
+pyuic5 dayfacto_category.ui > dayfacto_category.py
+
+pyuic5 dayfacto_category_select.ui > categorySelect.py
+
+py -3.4 -m py2exe.build_exe dayfactoApp.py
+
+python.exe setup.py install
+
+nuitka --standalone dayfactoApp.py
+
+PATH C:\Python34;C:\Python34\Lib\site-packages\cx_Freeze;%PATH%
+PATH C:\Python34\Lib\site-packages\PyQt5;%PATH%
+
+PATH=C:\Python34\Lib\site-packages\PyQt5;C:\Python34\;C:\Python34;C:\Python34\Lib\site-packages\cx_FreezeC:\Python34\Scripts;C:\gtk\bin;C:\Python34;C:\
+ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\
+System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\AMD\ATI.ACE\Core-Static;C:\Program Files (x8
+6)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Bin
+n\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\
+
+cd \Python34\Scripts
+
+Generate exe using cx_Freeze:
+python setup.py build
+
+powercfg -devicequery wake_armed
+powercfg -lastwake
+
+C:\python34\python -m pydoc -b

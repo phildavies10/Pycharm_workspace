@@ -1,0 +1,18 @@
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+def monthWeekNo(d):
+    wDay = d.weekday()
+    firstMonth = d.replace(day=1)
+    wDayFirst = firstMonth.weekday()
+    return (wDay - wDayFirst) // 7
+
+aStack = QtWidgets.QStackedWidget
+
+    def on_tableViewEntries_dblClicked(self):
+        a = self.tableViewEntries.currentIndex().row()
+        d = self.entriesViewModel.listdata[a][0]
+        self.selected_date = parse(str(d), dayfirst='false')
+        self.stackedWidget.setCurrentIndex(0)
+        self.update()
+
